@@ -21,10 +21,10 @@ function Process() {
             <img className="my-svg" src = {processImg} height = "150px" width = {isSmallScreen ? "130": "150px" }style = {{position: "relative", "paddingLeft": isSmallScreen ? "35%": "10%"}}/>
         </Grid> 
     </Grid>
-    <hr  style={{ width: isSmallScreen ? "100%" :'130%', borderColor: "black"}}/>
+    <hr  style={{ width: isSmallScreen ? "130%" :'140%', borderColor: "black",  marginLeft: isSmallScreen ? "-5%" :'auto'}}/>
     <Grid item>
         <Box p={0}>
-          <p style = {{ lineHeight: "30px", fontFamily:"josefin sans", fontSize: 24, position: "relative", width: isSmallScreen ? "100%": "130%"}}>A customer-oriented consulting process. Whatever the challenge, time frame, and budget, I can help you on your journey to success.
+          <p style = {{ lineHeight: "30px", fontFamily:"josefin sans", fontSize: 24, position: "relative", width: isSmallScreen ? "100%": "130%", textAlign: isSmallScreen ? "center": "left", marginLeft: isSmallScreen ? "10%": "auto"}}>A customer-oriented consulting process. Whatever the challenge, time frame, and budget, I can help you on your journey to success.
             A process with the ultimate goal of making you happy. </p>
           </Box>
           </Grid>

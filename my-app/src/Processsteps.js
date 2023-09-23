@@ -34,6 +34,7 @@ function Processsteps() {
           fontFamily: 'josefin sans',
           textAlign: isSmallScreen ? 'center' : 'left',
           paddingTop: isSmallScreen ? '0' : '-20%', // Adjust paddingTop for small screens
+          marginLeft: isSmallScreen ? "15%": "auto"
         }}
       >
         <Grid item xs={8} sm={2}>
