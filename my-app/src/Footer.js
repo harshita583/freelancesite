@@ -101,11 +101,11 @@ function Footer() {
               fontFamily: 'montserrat',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              textColor: 'white',
               textDecoration: 'none'
             }}
           >
-            LOGO
+            <a style = {{textDecoration: "none", color:"white" }} href = "https://www.linkedin.com/in/harshita-bhatt/">Contact Me</a>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: "center" }}>
             {pages.map((page) => (

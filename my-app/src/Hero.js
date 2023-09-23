@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import heroImage from './hero.svg';
 
 function Hero() {
-  const isSmallScreen = useMediaQuery('(max-width:600px)'); // Define your breakpoint for small screens
+  const isSmallScreen = useMediaQuery('(max-width:670px)'); // Define your breakpoint for small screens
 
   return (
     <Box
@@ -38,7 +38,7 @@ function Hero() {
           >
             <h1
               style={{
-                marginTop: isSmallScreen ? '10%' : '15%',
+                marginTop: isSmallScreen ? '0%' : '15%',
                 fontFamily: 'yeseva one',
                 fontSize: isSmallScreen ? 32 : 80,
                 textAlign: isSmallScreen ? 'center' : 'left',
@@ -98,6 +98,7 @@ function Hero() {
           marginRight: 'auto',
           zIndex: 3,
           height: '180px',
+          
           // bottom: isSmallScreen ? '-15%' : '-8%', // Adjust bottom positioning for small screens
         }}
         sx = {{
@@ -111,7 +112,7 @@ function Hero() {
         bottom: {
           xs: '-13%',
           sm: '-12%',
-          md: "-10%",
+          md: "-15%",
           lg: "-12%",
           xl: "-8%"
         }
@@ -122,9 +123,9 @@ function Hero() {
             padding: '5%',
             color: 'white',
             fontFamily: 'josefin sans',
-            fontSize: '18px',
-            lineHeight: '30px',
-            textAlign: 'center',
+            fontSize: '22px',
+            lineHeight: '25px',
+            textAlign: 'center'
           }}
         >
           An unwavering commitment to helping entrepreneurs, leaders, and those

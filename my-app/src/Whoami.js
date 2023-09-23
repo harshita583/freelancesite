@@ -20,7 +20,7 @@ function Whoami() {
     >
       <Grid
         container
-        spacing={isSmallScreen ? 2 : 5}
+        spacing={isSmallScreen ? 2 : 4}
         alignContent="flex-start"
         alignItems="center"
         justifyContent="center"
@@ -75,8 +75,10 @@ function Whoami() {
           <Box p={0}>
             <p
               style={{
+                paddingBottom: "10%",
                 fontFamily: 'josefin sans',
                 fontSize: isSmallScreen ? 18 : 25,
+                lineHeight: "30px",
                 color: 'white',
                 paddingRight: isSmallScreen ? "5%" : "10%", // Adjust padding for small screens
                 paddingLeft: isSmallScreen ? "5%" : "10%", // Adjust padding for small screens

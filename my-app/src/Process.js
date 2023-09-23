@@ -1,7 +1,7 @@
 import './App.css';
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 import processImg from '../src/processImg.svg'
 
 const isSmallScreen = window.innerWidth <= 600;
@@ -17,7 +17,7 @@ function Process() {
            <h1 style = {{fontSize: 48, fontFamily: "yeseva one", position: "relative"}}>The Process</h1>
         </Grid>
         <Grid item xs={4}>
-            <img className="my-svg" src = {processImg} height = "150px" width = {isSmallScreen ? "130": "150px" }style = {{position: "relative"}}/>
+            <img className="my-svg" src = {processImg} height = "150px" width = {isSmallScreen ? "130": "150px" }style = {{position: "relative", "paddingLeft": isSmallScreen ? "30%": "10%"}}/>
         </Grid> 
     </Grid>
     <hr  style={{ width: isSmallScreen ? "100%" :'130%', borderColor: "black"}}/>

@@ -28,6 +28,7 @@ function Testimonials() {
         }
       }}
       style={{
+        paddingTop: "-15%",
         background: '#F2E7D6',
         display: 'flex',
         flexDirection: 'column',
@@ -41,6 +42,7 @@ function Testimonials() {
         style={{
           fontFamily: 'yeseva one',
           fontSize: isSmallScreen ? '2rem' : '3rem', // Responsive font size
+          lineHeight: "80px"
           // paddingBottom: isSmallScreen ? '2%' : '4%', // Adjusted padding for small screens
         }}
       >
