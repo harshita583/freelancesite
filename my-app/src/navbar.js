@@ -8,6 +8,7 @@ import Menu from '@mui/material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const pages = ['About', 'The Process', 'Services', 'Pricing', 'Testimonials', 'Contact Me'];
 
@@ -47,17 +48,26 @@ function ResponsiveAppBar() {
 
   React.useEffect(() => {
     // Function to dynamically adjust font size based on available space
-    const handleResize = () => {
-      const containerWidth = document.getElementById('menu-container').offsetWidth;
-      const menuItemCount = pages.length;
-      const maxMenuItemWidth = containerWidth / menuItemCount;
+  const handleResize = () => {
+  const containerWidth = document.getElementById('menu-container').offsetWidth;
+  const menuItemCount = pages.length;
+  const maxMenuItemWidth = containerWidth / menuItemCount;
 
-      // Calculate the maximum font size based on the available space
-      const maxFontSize = Math.floor(maxMenuItemWidth / 10); // Adjust as needed
+  // Calculate the maximum font size based on the available space
+  const maxFontSize = Math.floor(maxMenuItemWidth / 10); // Adjust as needed
 
-      // Set the font size to the smaller of the two (initial or maximum)
-      setFontSize(Math.min(fontSize, maxFontSize));
-    };
+  // Set the font size to the smaller of the two (initial or maximum)
+  const newFontSize = Math.min(fontSize, maxFontSize);
+
+  // Update the font size
+  setFontSize(newFontSize);
+
+  // If the menu is open, force it to remain open
+  if (anchorElNav) {
+    handleOpenNavMenu(anchorElNav);
+  }
+};
+
 
     // Initial font size adjustment
     handleResize();
@@ -70,9 +80,9 @@ function ResponsiveAppBar() {
       window.removeEventListener('resize', handleResize);
     };
   }, [fontSize]);
-
+  const isSmallScreen = useMediaQuery('(max-width:670px)'); // Define your breakpoint for small screens
   return (
-    <AppBar sx={{ backgroundColor: '#CCA06F', px: 0 }}>
+    <AppBar sx={{ backgroundColor: '#CCA06F', px: 0,  textAlign: isSmallScreen ? 'center' : 'left', }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -84,6 +94,8 @@ function ResponsiveAppBar() {
               mr: 0,
               fontFamily: 'montserrat',
               fontWeight: 700,
+              fontSize: isSmallScreen ? "15px": "24px",
+              alignItems: isSmallScreen ? "center": "24px",
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
@@ -136,7 +148,7 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
 
-          <Typography
+          {/* <Typography
             variant="h5"
             noWrap
             component="a"
@@ -152,8 +164,8 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
-          </Typography>
+            Logo
+          </Typography>  */}
 
           <Box
             id="menu-container" // Add an ID for calculating available space

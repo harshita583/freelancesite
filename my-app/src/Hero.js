@@ -65,7 +65,8 @@ function Hero() {
               p={0}
               style={{
                 textAlign: isSmallScreen ? 'center' : 'left',
-                marginTop: '20px',
+                // marginTop: '20px',
+                marginTop: isSmallScreen ? "0%": "20px",
               }}
             >
               <a href="https://calendly.com/harshitabhatt58/30min">
