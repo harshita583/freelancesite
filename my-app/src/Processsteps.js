@@ -16,33 +16,31 @@ function Processsteps() {
       style={{
         position: 'relative',
         background: '#F2E7D6',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        padding: '2rem',
+        // padding: isSmallScreen ? '2rem 0' : '2rem', // Adjust padding for small screens
         lineHeight: '30px',
         display: 'flex', // Use flexbox to vertically center content
-        flexDirection: 'column', // Stack items vertically
-        alignItems: 'center', // Center items horizontally
+        flexDirection: isSmallScreen ? 'column' : 'row', // Stack items vertically for small screens
+        alignItems: isSmallScreen ? 'center' : 'flex-start', // Center items horizontally for small screens
         width: isSmallScreen ? '100%' : '80%',
       }}
     >
       <Grid
         container
         spacing={0}
-        alignItems="center"
+        alignItems={isSmallScreen ? 'center' : 'flex-start'} // Center items vertically for small screens
         justifyContent="center"
         style={{
           fontSize: '1.5rem',
           fontFamily: 'josefin sans',
           textAlign: isSmallScreen ? 'center' : 'left',
-          paddingTop: "-20%"
+          paddingTop: isSmallScreen ? '0' : '-20%', // Adjust paddingTop for small screens
         }}
       >
         <Grid item xs={8} sm={2}>
           <img src={one} height="80px" width="80px" alt="Step 1" />
         </Grid>
         <Grid item xs={12} sm={10}>
-          <p>
+          <p >
             <strong>Requirement Gathering</strong>: Initial focus on collecting necessary information on the business, founder, and project. This includes an initial meeting and client intake form. Here is where the scope of work is defined.
           </p>
         </Grid>

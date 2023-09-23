@@ -42,7 +42,7 @@ function Testimonials() {
         style={{
           fontFamily: 'yeseva one',
           fontSize: isSmallScreen ? '2rem' : '3rem', // Responsive font size
-          lineHeight: "80px"
+          lineHeight: "40px"
           // paddingBottom: isSmallScreen ? '2%' : '4%', // Adjusted padding for small screens
         }}
       >

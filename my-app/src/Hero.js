@@ -38,7 +38,7 @@ function Hero() {
           >
             <h1
               style={{
-                marginTop: isSmallScreen ? '0%' : '15%',
+                marginTop: isSmallScreen ? '-4%' : '15%',
                 fontFamily: 'yeseva one',
                 fontSize: isSmallScreen ? 32 : 80,
                 textAlign: isSmallScreen ? 'center' : 'left',
@@ -112,7 +112,7 @@ function Hero() {
         },
         bottom: {
           xs: '-13%',
-          sm: '-12%',
+          sm: '-15%',
           md: "-15%",
           lg: "-12%",
           xl: "-8%"
@@ -121,7 +121,7 @@ function Hero() {
       >
         <p
           style={{
-            padding: '5%',
+            padding: isSmallScreen? "3%" : '5%',
             color: 'white',
             fontFamily: 'josefin sans',
             fontSize: '22px',

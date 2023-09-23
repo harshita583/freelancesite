@@ -23,6 +23,7 @@ function Processcomponent() {
 
   return (
     <Box
+    id = "process"
       style={{
         background: '#F2E7D6',
         position: 'relative',
@@ -41,7 +42,7 @@ function Processcomponent() {
         <Grid item xs={12} sm={3} disableGutters={true}>
           <Process />
         </Grid>
-        <Grid item xs={12} sm={9}>
+        <Grid item xs={12} sm={9} alignContent={"center"} style = {{alignItems: "center"}}>
           <Processsteps />
         </Grid>
       </Grid>

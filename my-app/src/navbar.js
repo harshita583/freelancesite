@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -48,26 +48,25 @@ function ResponsiveAppBar() {
 
   React.useEffect(() => {
     // Function to dynamically adjust font size based on available space
-  const handleResize = () => {
-  const containerWidth = document.getElementById('menu-container').offsetWidth;
-  const menuItemCount = pages.length;
-  const maxMenuItemWidth = containerWidth / menuItemCount;
+    const handleResize = () => {
+      const containerWidth = document.getElementById('menu-container').offsetWidth;
+      const menuItemCount = pages.length;
+      const maxMenuItemWidth = containerWidth / menuItemCount;
 
-  // Calculate the maximum font size based on the available space
-  const maxFontSize = Math.floor(maxMenuItemWidth / 10); // Adjust as needed
+      // Calculate the maximum font size based on the available space
+      const maxFontSize = Math.floor(maxMenuItemWidth / 10); // Adjust as needed
 
-  // Set the font size to the smaller of the two (initial or maximum)
-  const newFontSize = Math.min(fontSize, maxFontSize);
+      // Set the font size to the smaller of the two (initial or maximum)
+      const newFontSize = Math.min(fontSize, maxFontSize);
 
-  // Update the font size
-  setFontSize(newFontSize);
+      // Update the font size
+      setFontSize(newFontSize);
 
-  // If the menu is open, force it to remain open
-  if (anchorElNav) {
-    handleOpenNavMenu(anchorElNav);
-  }
-};
-
+      // If the menu is open, force it to remain open
+      if (anchorElNav) {
+        handleOpenNavMenu(anchorElNav);
+      }
+    };
 
     // Initial font size adjustment
     handleResize();
@@ -80,31 +79,53 @@ function ResponsiveAppBar() {
       window.removeEventListener('resize', handleResize);
     };
   }, [fontSize]);
+
   const isSmallScreen = useMediaQuery('(max-width:670px)'); // Define your breakpoint for small screens
+
   return (
-    <AppBar sx={{ backgroundColor: '#CCA06F', px: 0,  textAlign: isSmallScreen ? 'center' : 'left', }}>
+    <AppBar sx={{ backgroundColor: '#CCA06F', px: 0 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#"
-            sx={{
-              mr: 0,
-              fontFamily: 'montserrat',
-              fontWeight: 700,
-              fontSize: isSmallScreen ? "15px": "24px",
-              alignItems: isSmallScreen ? "center": "24px",
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-              flexGrow: 1,
-              display: { xs: 'block', md: 'flex' },
-            }}
-          >
-            Consulting with Harshita
-          </Typography>
+          <Box sx={{ flexGrow: 1 }}>
+            {isSmallScreen ? (
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="#"
+                sx={{
+                  fontFamily: 'montserrat',
+                  fontWeight: 700,
+                  fontSize: '18px',
+                  textAlign: "center",
+                  letterSpacing: '.3rem',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  justifyContent: 'center', // Center text horizontally
+                }}
+              >
+                Consulting with Harshita
+              </Typography>
+            ) : (
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="#"
+                sx={{
+                  fontFamily: 'montserrat',
+                  fontWeight: 700,
+                  fontSize: '24px',
+                  letterSpacing: '.3rem',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                }}
+              >
+                Consulting with Harshita
+              </Typography>
+            )}
+          </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -147,25 +168,6 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-
-          {/* <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'montserrat',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Logo
-          </Typography>  */}
 
           <Box
             id="menu-container" // Add an ID for calculating available space

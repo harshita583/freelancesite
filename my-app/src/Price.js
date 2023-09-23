@@ -18,6 +18,7 @@ function Price() {
       }}
     >
       <Grid
+        id = "price"
         container
         spacing={isSmallScreen ? 2 : 10}
         alignContent="flex-start"
