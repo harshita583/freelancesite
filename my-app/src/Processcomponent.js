@@ -7,7 +7,8 @@ import Processsteps from './Processsteps';
 import { Box } from '@mui/material';
 
 function Processcomponent() {
-  const isSmallScreen = window.innerWidth <= 600; // Define your breakpoint here
+  const isSmallScreen = window.innerWidth <= 960; // Define your breakpoint here
+
 
   useEffect(() => {
     // Set the HTML and body elements to full viewport height

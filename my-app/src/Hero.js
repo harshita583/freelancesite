@@ -40,7 +40,7 @@ function Hero() {
               style={{
                 marginTop: isSmallScreen ? '-4%' : '15%',
                 fontFamily: 'yeseva one',
-                fontSize: isSmallScreen ? 32 : 80,
+                fontSize: isSmallScreen ? 32 : 60,
                 textAlign: isSmallScreen ? 'center' : 'left',
                 width: isSmallScreen ? '80%' : '70%',
               }}

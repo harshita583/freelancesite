@@ -7,7 +7,7 @@ import two from '../src/two.svg';
 import three from '../src/three.svg';
 import four from '../src/four.svg';
 
-const isSmallScreen = window.innerWidth <= 670;
+const isSmallScreen = window.innerWidth <= 960;
 
 function Processsteps() {
   return (
@@ -37,7 +37,7 @@ function Processsteps() {
           marginLeft: isSmallScreen ? "15%": "auto"
         }}
       >
-        <Grid item xs={8} sm={2}>
+        <Grid item xs={8}  sm={2}>
           <img src={one} height="80px" width="80px" alt="Step 1" />
         </Grid>
         <Grid item xs={12} sm={10}>
